@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+
+    {% block title %}
+        {{title}}
+    {% endblock %}
+
+
+{% block content %}
+    {% for rec in recept_list %}
+        <div>
+            <a href={% url 'recept' rec.id %}>
+            <img src="{{ rec.image.url }}" height="200" alt="{{ rec.recept_name }}">
+            <p>{{ rec.recept_name }}</p>
+            <p>{{ rec.description|truncatewords:15 }}</p>
+            </a>
+            {% if rec.author == request.user.username %}
+                <a href={% url 'edit_recept' rec.id %}>Редактировать</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

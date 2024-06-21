@@ -1,0 +1,23 @@
+{% extends "users/base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Вход</legend>
+                {{ form.as_p }}
+            </fieldset>
+            <div>
+                <button class="btn btn-primary" type="submit">Войти</button>
+            </div>
+        </form>
+        <div>
+            <small>
+                Нужен аккаунт? <a class="ml-2" href="{% url 'register' %}">Регистрация</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "users/base.html" %}
+
+    {% block title %}
+        {{title}}
+    {% endblock %}
+
+{% block content %}
+
+    <div  class="recept_view">
+        <div class="recept_name">
+            <p>{{ recept.recept_name }}</p>
+        </div>
+        <div class="recept_image">
+            <img src="{{ recept.image.url }}">
+        </div>
+        <div class="recept_about">
+            <p>{{ recept.cooking_time }}</p>
+            <p>{{ recept.description }}</p>
+            <p>{{ recept.ingredients }}</p>
+            <p>{{ recept.cooking_steps }}</p>
+            <p>{{ recept.author }}</p>
+        </div>
+    </div>
+
+{% endblock %}

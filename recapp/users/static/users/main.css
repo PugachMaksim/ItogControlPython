@@ -1,0 +1,72 @@
+﻿* {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none !important;
+    text-family: roboto;
+    font-size: 12px;
+}
+
+header{
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    border: 1px;
+    background-color: rgba(222, 247, 208, 0.8) !important;
+}
+
+body {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Lato;
+    font-family: Lato;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    text-line-height: 20px;
+    text-color: #000000;
+    background-color: rgba(222, 247, 208, 0.8) !important;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+}
+
+
+.home_5_blud {
+    font-family:
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    border: 1px;
+}
+
+.recept {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 20px;
+    border-style: solid !important;
+    border: 1px solid #000 !important;
+
+}
+.img_rec{
+    display: grid
+}
+
+.text_rec{
+    margin: 50px
+
+    }
+
+.edit{
+}
+
+.recept_view{
+    display: grid !important;
+    grid-template-columns: 1fr;
+    padding: 20px
+}

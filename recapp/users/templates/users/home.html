@@ -1,0 +1,24 @@
+{% extends "users/base.html" %}
+
+    {% block title %}
+        {{title}}
+    {% endblock %}
+
+
+{% block content %}
+    <div class="home_5_blud">
+        {% for rec in recept_list %}
+            <div class="recept">
+                <div class="img_rec">
+                    <a href={% url 'recept' rec.id %}>
+                    <img src="{{ rec.image.url }}" height="200" alt="{{ rec.recept_name }}">
+                    </a>
+                </div>
+                <div class="text_rec">
+                    <p>{{ rec.recept_name }}</p>
+                    <p>{{ rec.description|truncatewords:15 }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

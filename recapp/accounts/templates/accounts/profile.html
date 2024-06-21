@@ -1,0 +1,33 @@
+{% extends "users/base.html" %}
+
+    {% block title %}
+        {{user.username}}
+    {% endblock %}
+
+{% block content %}
+<div>
+    <h2>{{ user.username }}</h2>
+    <p>{{ user.email }}</p>
+    <div>
+        <h2>Мои рецепты</h2>
+            {% for rec in recept_list %}
+                {% if rec.author == request.user.username %}
+                    <div class="recept">
+                        <div class="img_rec">
+                            <a href={% url 'recept' rec.id %}>
+                            <img src="{{ rec.image.url }}" height="200" alt="{{ rec.recept_name }}">
+                            </a>
+                        </div>
+                        <div class="text_rec">
+                            <p>{{ rec.recept_name }}</p>
+                            <p>{{ rec.description|truncatewords:15 }}</p>
+                        </div>
+                            <div class="edit">
+                                <a href={% url 'edit_recept' rec.id %}>Редактировать</a>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+    </div>
+</div>
+{% endblock content %}
